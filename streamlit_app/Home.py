@@ -13,6 +13,19 @@ buyer_profile = load_data()
 st.title('🏢 Real Estate Market Intelligence Dashboard')
 st.markdown('### AI-powered buyer segmentation and investment profiling')
 
+st.markdown(
+    """
+    <div style="padding:20px;border-radius:16px;background:#EFF6FF;border:1px solid #DBEAFE;margin-bottom:20px;">
+        <h3 style="color:#1D4ED8;margin-bottom:8px;">AI-powered real estate market intelligence</h3>
+        <p style="color:#334155;margin:0;">
+        Identify high-value buyer segments, investment behavior patterns, financing preferences,
+        and geographic opportunities using machine learning clustering and interactive analytics.
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
 st.sidebar.header('Filters')
 
 countries = ['All'] + sorted(buyer_profile['country'].dropna().unique().tolist())
@@ -87,7 +100,30 @@ summary = filtered.groupby('buyer_segment').agg(
     Average_Satisfaction=('satisfaction_score', 'mean')
 ).round(2)
 
+top_segment = filtered['buyer_segment'].value_counts().idxmax()
+
+st.markdown(
+    f"""
+    ### Executive insight
+
+    The **{top_segment}** segment currently represents the largest buyer population in the filtered dataset.
+
+    This segment should be prioritized for targeted marketing campaigns, personalized property recommendations,
+    and investment-focused customer engagement strategies.
+    """
+)
+
 st.dataframe(summary, use_container_width=True)
 
-st.markdown('---')
-st.caption('Built with Streamlit, Plotly, and Scikit-learn')
+st.markdown("---")
+
+csv = filtered.to_csv(index=False).encode('utf-8')
+
+st.download_button(
+    label="📥 Download filtered buyer data",
+    data=csv,
+    file_name="buyer_segmented_data.csv",
+    mime="text/csv"
+)
+
+st.caption("Built with Streamlit, Plotly, and Scikit-learn")
