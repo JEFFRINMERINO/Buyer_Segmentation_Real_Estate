@@ -1,6 +1,6 @@
 import streamlit as st
 import plotly.express as px
-from utils import load_data
+from utils import load_data, metric_card
 
 st.set_page_config(
     page_title='Real Estate Market Intelligence',
@@ -36,10 +36,17 @@ avg_satisfaction = filtered['satisfaction_score'].mean()
 
 col1, col2, col3, col4 = st.columns(4)
 
-col1.metric('Total Buyers', f'{total_buyers:,}')
-col2.metric('Total Investment Value', f'${total_investment:,.0f}')
-col3.metric('Average Age', f'{avg_age:.1f}')
-col4.metric('Average Satisfaction', f'{avg_satisfaction:.2f}')
+with col1:
+    metric_card("Total Buyers", f"{total_buyers:,}")
+
+with col2:
+    metric_card("Total Investment Value", f"${total_investment:,.0f}")
+
+with col3:
+    metric_card("Average Age", f"{avg_age:.1f}")
+
+with col4:
+    metric_card("Average Satisfaction", f"{avg_satisfaction:.2f}")
 
 st.divider()
 
