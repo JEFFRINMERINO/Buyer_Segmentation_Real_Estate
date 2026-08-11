@@ -1,4 +1,4 @@
-# 🏢 Buyer Segmentation & Investment Profiling for Real Estate Market Intelligence
+1# 🏢 Buyer Segmentation & Investment Profiling for Real Estate Market Intelligence
 
 <div align="center">
 
@@ -135,59 +135,52 @@ This project uses **unsupervised machine learning** to discover hidden buyer seg
 
 ---
 
-# 🛠️ Technology Stack
+## 🛠️ Technology stack
 
-## 👨‍💻 Programming
-
-<p>
-<img src="https://skillicons.dev/icons?i=python"/>
-</p>
-
-## 📊 Data Analysis
+### Programming
 
 <p>
-<img src="https://skillicons.dev/icons?i=python"/>
+  <img src="https://skillicons.dev/icons?i=python"/>
 </p>
 
-**Libraries**
-
-* Pandas
-* NumPy
-
-## 🤖 Machine Learning
+### Data analysis
 
 <p>
-<img src="https://skillicons.dev/icons?i=python"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="48"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" width="48"/>
 </p>
 
-**Libraries**
-
-* Scikit-learn
-* SciPy
-* Joblib
-
-## 📈 Visualization
+### Machine learning
 
 <p>
-<img src="https://skillicons.dev/icons?i=python"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" width="60"/>
+  <img src="https://scipy.org/images/logo.svg" width="48"/>
 </p>
 
-**Libraries**
-
-* Plotly
-* Matplotlib
-
-## 🖥️ Dashboard
+### Visualization
 
 <p>
-<img src="https://skillicons.dev/icons?i=python"/>
+  <img src="https://images.plot.ly/logo/new-branding/plotly-logomark.png" width="48"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" width="48"/>
 </p>
 
-**Framework**
+### Dashboard
 
-* Streamlit
+<p>
+  <img src="https://streamlit.io/images/brand/streamlit-mark-color.png" width="48"/>
+</p>
 
----
+### Model persistence
+
+<p>
+  <img src="https://joblib.readthedocs.io/en/latest/_static/joblib_logo.svg" width="120"/>
+</p>
+
+### Development tools
+
+<p>
+  <img src="https://skillicons.dev/icons?i=git,github,vscode"/>
+</p>
 
 # ⚙️ Feature Engineering
 
