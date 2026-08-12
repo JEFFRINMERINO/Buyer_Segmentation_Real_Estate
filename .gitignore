@@ -23,8 +23,6 @@ env/
 Thumbs.db
 
 # Generated outputs
-reports/figures/
-reports/*.png
 reports/*.pdf
 
 # Models
