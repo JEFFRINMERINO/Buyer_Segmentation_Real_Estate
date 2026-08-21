@@ -10,8 +10,13 @@ st.set_page_config(page_title="Model Performance", page_icon="📈", layout="wid
 
 buyer_profile = load_data()
 
-# Load model
-kmeans = joblib.load("../models/kmeans_model.pkl")
+from utils import PROJECT_ROOT
+
+MODEL_DIR = PROJECT_ROOT / "models"
+
+kmeans_path = MODEL_DIR / "kmeans_model.pkl"
+
+kmeans = joblib.load(kmeans_path)
 
 # Feature columns
 feature_cols = [

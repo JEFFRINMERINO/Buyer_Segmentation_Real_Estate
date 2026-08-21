@@ -1,8 +1,9 @@
 import streamlit as st
-import pandas as pd
 import joblib
-from utils import load_data
+import pandas as pd
+from pathlib import Path
 
+from utils import PROJECT_ROOT, load_data
 st.set_page_config(
     page_title="Predict Buyer Segment",
     page_icon="🤖",
@@ -12,9 +13,13 @@ st.set_page_config(
 # Load historical data
 buyer_profile = load_data()
 
-# Load model and scaler
-kmeans = joblib.load("../models/kmeans_model.pkl")
-scaler = joblib.load("../models/scaler.pkl")
+MODEL_DIR = PROJECT_ROOT / "models"
+
+kmeans_path = MODEL_DIR / "kmeans_model.pkl"
+scaler_path = MODEL_DIR / "scaler.pkl"
+
+kmeans = joblib.load(kmeans_path)
+scaler = joblib.load(scaler_path)
 
 st.title("🤖 Predict New Buyer Segment")
 st.markdown(

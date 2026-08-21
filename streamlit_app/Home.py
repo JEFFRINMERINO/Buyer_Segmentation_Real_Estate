@@ -10,6 +10,14 @@ st.set_page_config(
 
 buyer_profile = load_data()
 
+total_buyers = buyer_profile["client_id"].nunique()
+
+total_investment = buyer_profile["total_investment_value"].sum()
+
+average_age = buyer_profile["age"].mean()
+
+average_satisfaction = buyer_profile["satisfaction_score"].mean()
+
 st.title('🏢 Real Estate Market Intelligence Dashboard')
 st.markdown('### AI-powered buyer segmentation and investment profiling')
 
@@ -50,16 +58,28 @@ avg_satisfaction = filtered['satisfaction_score'].mean()
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    metric_card("Total Buyers", f"{total_buyers:,}")
+    st.metric(
+        label="Total Buyers",
+        value=f"{total_buyers:,}"
+    )
 
 with col2:
-    metric_card("Total Investment Value", f"${total_investment:,.0f}")
+    st.metric(
+        label="Total Investment Value",
+        value=f"${total_investment:,.0f}"
+    )
 
 with col3:
-    metric_card("Average Age", f"{avg_age:.1f}")
+    st.metric(
+        label="Average Age",
+        value=f"{average_age:.1f}"
+    )
 
 with col4:
-    metric_card("Average Satisfaction", f"{avg_satisfaction:.2f}")
+    st.metric(
+        label="Average Satisfaction",
+        value=f"{average_satisfaction:.2f}"
+    )
 
 st.divider()
 
