@@ -25,5 +25,3 @@ Thumbs.db
 # Generated outputs
 reports/*.pdf
 
-# Models
-models/*.pkl
